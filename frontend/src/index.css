@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+body { font-family: 'Inter', system-ui, sans-serif; color: #c8c8e8; }
+code, .font-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+
+/* ── Glass card ──────────────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(12, 12, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #1c1c3e;
+  border-radius: 12px;
+}
+
+/* ── Neon text ───────────────────────────────────────────────────────────── */
+.text-neon-cyan  { color: #00d4ff; text-shadow: 0 0 8px rgba(0,212,255,0.6); }
+.text-neon-green { color: #00e878; text-shadow: 0 0 8px rgba(0,232,120,0.6); }
+.text-neon-red   { color: #ef4444; text-shadow: 0 0 8px rgba(239,68,68,0.6); }
+.text-neon-amber { color: #f59e0b; text-shadow: 0 0 8px rgba(245,158,11,0.6); }
+
+/* ── Metric card glow states ─────────────────────────────────────────────── */
+.card-glow-cyan  { box-shadow: 0 0 0 1px rgba(0,212,255,0.25), 0 4px 24px rgba(0,212,255,0.08); }
+.card-glow-green { box-shadow: 0 0 0 1px rgba(0,232,120,0.25), 0 4px 24px rgba(0,232,120,0.08); }
+.card-glow-red   { box-shadow: 0 0 0 1px rgba(239,68,68,0.3),  0 4px 24px rgba(239,68,68,0.12); }
+.card-glow-amber { box-shadow: 0 0 0 1px rgba(245,158,11,0.3), 0 4px 24px rgba(245,158,11,0.10); }
+
+/* ── Status badge ────────────────────────────────────────────────────────── */
+.badge-healthy  { background: rgba(0,232,120,0.15); color: #00e878; border: 1px solid rgba(0,232,120,0.35); }
+.badge-degraded { background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.35); }
+.badge-critical { background: rgba(239,68,68,0.15);  color: #ef4444; border: 1px solid rgba(239,68,68,0.35); }
+.badge-down     { background: rgba(239,68,68,0.25);  color: #ff6b6b; border: 1px solid rgba(239,68,68,0.5); }
+.badge-idle     { background: rgba(74,74,114,0.2);   color: #7878a8; border: 1px solid rgba(74,74,114,0.4); }
+
+/* ── Progress bar ────────────────────────────────────────────────────────── */
+.progress-track { background: #1c1c3e; border-radius: 9999px; overflow: hidden; }
+.progress-fill  { height: 100%; border-radius: 9999px; transition: width 0.5s ease; }
+
+/* ── Grid bg ─────────────────────────────────────────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(79,156,249,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,156,249,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Severity pills ──────────────────────────────────────────────────────── */
+.sev-critical { background: rgba(239,68,68,0.15);  color: #ef4444; }
+.sev-warning  { background: rgba(245,158,11,0.15); color: #f59e0b; }
+.sev-info     { background: rgba(79,156,249,0.15); color: #4f9cf9; }
+
+/* ── Typewriter cursor ───────────────────────────────────────────────────── */
+.typewriter::after {
+  content: '▋';
+  animation: blink 1s step-end infinite;
+  color: #00d4ff;
+}
+@keyframes blink { 0%,100% { opacity: 1 } 50% { opacity: 0 } }
+
+/* ── Recharts custom ─────────────────────────────────────────────────────── */
+.recharts-tooltip-wrapper { outline: none; }
+.recharts-default-tooltip {
+  background: #0c0c1e !important;
+  border: 1px solid #1c1c3e !important;
+  border-radius: 8px !important;
+  color: #c8c8e8 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+}
+
+/* ── Scrollable panel ────────────────────────────────────────────────────── */
+.panel-scroll { overflow-y: auto; max-height: 340px; }
